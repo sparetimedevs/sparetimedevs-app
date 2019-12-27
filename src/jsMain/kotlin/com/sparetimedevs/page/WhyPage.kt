@@ -14,11 +14,15 @@
  * limitations under the License.
  */
 
-package com.sparetimedevs.pages
+package com.sparetimedevs.page
 
+import com.sparetimedevs.page.content.WHY_HEADING
+import com.sparetimedevs.page.content.WHY_PARAGRAPH
+import com.sparetimedevs.page.util.asHeading
+import com.sparetimedevs.page.util.asParagraph
 import org.w3c.dom.HTMLDivElement
 
-class WhoPage(
+class WhyPage(
     private val contentDiv: HTMLDivElement
 ) {
 
@@ -27,6 +31,7 @@ class WhoPage(
     }
 
     private fun show() {
-        contentDiv.innerText = "Very soon..."
+        contentDiv.appendChild(WHY_HEADING.asHeading())
+        contentDiv.appendChild(WHY_PARAGRAPH.asParagraph())
     }
 }
