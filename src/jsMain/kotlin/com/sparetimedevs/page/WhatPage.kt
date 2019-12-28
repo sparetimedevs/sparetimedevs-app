@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.sparetimedevs.pages
+package com.sparetimedevs.page
 
 import org.w3c.dom.HTMLDivElement
 

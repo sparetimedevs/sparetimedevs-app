@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-package com.sparetimedevs.pages
+package com.sparetimedevs.page.util
 
-import org.w3c.dom.HTMLDivElement
+import org.w3c.dom.HTMLHeadingElement
+import org.w3c.dom.HTMLParagraphElement
+import kotlin.browser.document
 
-class WhyPage(
-    private val contentDiv: HTMLDivElement
-) {
+fun String.asHeading(): HTMLHeadingElement {
+    val heading: HTMLHeadingElement = document.createElement("h2") as HTMLHeadingElement
+    heading.innerText = this
+    return heading
+}
 
-    init {
-        show()
-    }
-
-    private fun show() {
-        contentDiv.innerText = "Promise!"
-    }
+fun String.asParagraph(): HTMLParagraphElement {
+    val paragraph: HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement
+    paragraph.innerText = this
+    return paragraph
 }

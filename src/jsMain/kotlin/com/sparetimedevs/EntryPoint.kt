@@ -16,10 +16,10 @@
 
 package com.sparetimedevs
 
-import com.sparetimedevs.pages.IndexPage
-import com.sparetimedevs.pages.WhatPage
-import com.sparetimedevs.pages.WhoPage
-import com.sparetimedevs.pages.WhyPage
+import com.sparetimedevs.page.IndexPage
+import com.sparetimedevs.page.WhatPage
+import com.sparetimedevs.page.WhoPage
+import com.sparetimedevs.page.WhyPage
 import org.w3c.dom.HTMLAnchorElement
 import org.w3c.dom.HTMLButtonElement
 import org.w3c.dom.HTMLDivElement
@@ -52,9 +52,9 @@ private fun createHeaderDiv(): HTMLDivElement {
 
     headerDiv.appendChild(createLogo())
 
-    headerDiv.appendChild(createButton("Why", "why.html"))
-    headerDiv.appendChild(createButton("Who", "who.html"))
     headerDiv.appendChild(createButton("What", "what.html"))
+    headerDiv.appendChild(createButton("Who", "who.html"))
+    headerDiv.appendChild(createButton("Why", "why.html"))
     return headerDiv
 }
 
@@ -76,6 +76,6 @@ private fun createButton(label: String, href: String): HTMLButtonElement {
     buttonElement.addEventListener("click", {
         window.location.href = href
     })
-    buttonElement.addClass("view-details", "ripple", "float-right", "position-relative")
+    buttonElement.addClass("view-details", "ripple", "float-right")
     return buttonElement
 }

@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.sparetimedevs.pages
+package com.sparetimedevs.page
 
 import org.w3c.dom.HTMLDivElement
 
-class IndexPage(
+class WhoPage(
     private val contentDiv: HTMLDivElement
 ) {
 
@@ -27,6 +27,6 @@ class IndexPage(
     }
 
     private fun show() {
-        contentDiv.innerText = "sparetimedevs"
+        contentDiv.innerText = "Very soon..."
     }
 }
