@@ -14,20 +14,24 @@
  * limitations under the License.
  */
 
-package com.sparetimedevs.page.util
+package com.sparetimedevs.page
 
-import org.w3c.dom.HTMLHeadingElement
-import org.w3c.dom.HTMLParagraphElement
-import kotlin.browser.document
+import com.sparetimedevs.page.content.TO_DO_HEADING
+import com.sparetimedevs.page.content.TO_DO_PARAGRAPH
+import com.sparetimedevs.page.util.asHeading
+import com.sparetimedevs.page.util.asParagraph
+import org.w3c.dom.HTMLDivElement
 
-fun String.asHeading(): HTMLHeadingElement {
-    val heading: HTMLHeadingElement = document.createElement("h2") as HTMLHeadingElement
-    heading.innerHTML = this
-    return heading
-}
+class SuspendmongoPage(
+    private val contentDiv: HTMLDivElement
+) {
 
-fun String.asParagraph(): HTMLParagraphElement {
-    val paragraph: HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement
-    paragraph.innerHTML = this
-    return paragraph
+    init {
+        show()
+    }
+
+    private fun show() {
+        contentDiv.appendChild(TO_DO_HEADING.asHeading())
+        contentDiv.appendChild(TO_DO_PARAGRAPH.asParagraph())
+    }
 }

@@ -16,6 +16,10 @@
 
 package com.sparetimedevs.page
 
+import com.sparetimedevs.page.content.WHAT_HEADING
+import com.sparetimedevs.page.content.WHAT_PARAGRAPH
+import com.sparetimedevs.page.util.asHeading
+import com.sparetimedevs.page.util.asParagraph
 import org.w3c.dom.HTMLDivElement
 
 class WhatPage(
@@ -27,6 +31,7 @@ class WhatPage(
     }
 
     private fun show() {
-        contentDiv.innerText = "Come back soon."
+        contentDiv.appendChild(WHAT_HEADING.asHeading())
+        contentDiv.appendChild(WHAT_PARAGRAPH.asParagraph())
     }
 }
