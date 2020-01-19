@@ -16,7 +16,9 @@
 
 package com.sparetimedevs.page.content
 
-const val WHY_HEADING = "Why do we work on these projects in our free time?"
+const val WHY_HEADING =
+"""Why do we work on these projects in our free time?
+"""
 
 const val WHY_PARAGRAPH =
 """We enjoy trying out new technologies and ideas. Doing so together is even more fun. Working together on projects means faster development, which means that we see faster results from our work.

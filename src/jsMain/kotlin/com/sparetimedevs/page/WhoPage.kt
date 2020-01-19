@@ -16,6 +16,10 @@
 
 package com.sparetimedevs.page
 
+import com.sparetimedevs.page.content.TO_DO_HEADING
+import com.sparetimedevs.page.content.TO_DO_PARAGRAPH
+import com.sparetimedevs.page.util.asHeading
+import com.sparetimedevs.page.util.asParagraph
 import org.w3c.dom.HTMLDivElement
 
 class WhoPage(
@@ -27,6 +31,7 @@ class WhoPage(
     }
 
     private fun show() {
-        contentDiv.innerText = "Very soon..."
+        contentDiv.appendChild(TO_DO_HEADING.asHeading())
+        contentDiv.appendChild(TO_DO_PARAGRAPH.asParagraph())
     }
 }

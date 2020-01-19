@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-package com.sparetimedevs.page.util
+package com.sparetimedevs.page.content
 
-import org.w3c.dom.HTMLHeadingElement
-import org.w3c.dom.HTMLParagraphElement
-import kotlin.browser.document
+const val WHAT_HEADING =
+"""What are we doing?
+"""
 
-fun String.asHeading(): HTMLHeadingElement {
-    val heading: HTMLHeadingElement = document.createElement("h2") as HTMLHeadingElement
-    heading.innerHTML = this
-    return heading
-}
-
-fun String.asParagraph(): HTMLParagraphElement {
-    val paragraph: HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement
-    paragraph.innerHTML = this
-    return paragraph
-}
+const val WHAT_PARAGRAPH =
+"""We develop software projects.
+<br>
+<br>
+Projects:
+<br>
+- <a href="/what/win.html">WIN</a>
+<br>
+- <a href="/what/consonance.html">Consonance</a>
+<br>
+- <a href="/what/suspendmongo.html">suspendmongo</a>
+"""

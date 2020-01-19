@@ -16,10 +16,13 @@
 
 package com.sparetimedevs
 
+import com.sparetimedevs.page.ConsonancePage
 import com.sparetimedevs.page.IndexPage
+import com.sparetimedevs.page.SuspendmongoPage
 import com.sparetimedevs.page.WhatPage
 import com.sparetimedevs.page.WhoPage
 import com.sparetimedevs.page.WhyPage
+import com.sparetimedevs.page.WinPage
 import org.w3c.dom.HTMLAnchorElement
 import org.w3c.dom.HTMLButtonElement
 import org.w3c.dom.HTMLDivElement
@@ -34,15 +37,18 @@ fun main() {
     rootDiv?.appendChild(createHeaderDiv()) ?: return
 
     val contentDiv: HTMLDivElement = document.createElement("div") as HTMLDivElement
-    contentDiv.addClass("content", "content-children")
+    contentDiv.addClass("content")
     rootDiv.appendChild(contentDiv)
 
     when (window.location.pathname) {
         "/index.html" -> IndexPage(contentDiv)
         "/what.html" -> WhatPage(contentDiv)
+        "/what/win.html" -> WinPage(contentDiv)
+        "/what/consonance.html" -> ConsonancePage(contentDiv)
+        "/what/suspendmongo.html" -> SuspendmongoPage(contentDiv)
         "/who.html" -> WhoPage(contentDiv)
         "/why.html" -> WhyPage(contentDiv)
-        else -> window.location.href = "index.html"
+        else -> window.location.href = "/index.html"
     }
 }
 
@@ -52,19 +58,19 @@ private fun createHeaderDiv(): HTMLDivElement {
 
     headerDiv.appendChild(createLogo())
 
-    headerDiv.appendChild(createButton("What", "what.html"))
-    headerDiv.appendChild(createButton("Who", "who.html"))
-    headerDiv.appendChild(createButton("Why", "why.html"))
+    headerDiv.appendChild(createButton("What", "/what.html"))
+    headerDiv.appendChild(createButton("Who", "/who.html"))
+    headerDiv.appendChild(createButton("Why", "/why.html"))
     return headerDiv
 }
 
 private fun createLogo(): HTMLAnchorElement {
     val logoAnchor: HTMLAnchorElement = document.createElement("a") as HTMLAnchorElement
-    logoAnchor.href = "index.html"
+    logoAnchor.href = "/index.html"
     logoAnchor.addClass("logo")
 
     val imageElement = document.createElement("img") as HTMLImageElement
-    imageElement.src = "sparetimedevs_header_logo.png"
+    imageElement.src = "/sparetimedevs_header_logo.png"
     logoAnchor.appendChild(imageElement)
 
     return logoAnchor
