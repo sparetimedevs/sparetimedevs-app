@@ -57,7 +57,9 @@ Technology stack:
     - DBaaS
         - MongoDB Atlas
 </pre>
-<!-- insert application landscape image -->
+<div class="crop">
+    <img src="/win_application.png">
+</div>
 <br>
 Local development environment:
 <pre>
@@ -71,6 +73,7 @@ Local development environment:
 - Intellij
 - Visual Studio Code
 - MongoDB Compass (Community Edition)
+- Postman & Newman
 </pre>
 <br>
 Why is this a fun project to work on? Because the core concept is easy to set up, while there still are a lot of 
